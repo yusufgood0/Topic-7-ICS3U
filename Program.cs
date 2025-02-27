@@ -1,5 +1,5 @@
-﻿using System.Threading.Channels;
-
+using System.Threading.Channels;
+//fin
 namespace Topic_7
 {
     public class Program
@@ -11,12 +11,6 @@ namespace Topic_7
             //run
             int run;
             int numOfParts = 2;
-
-            //part 1
-
-
-            //part 2
-
 
             Random generator = new Random();
 
@@ -64,14 +58,14 @@ namespace Topic_7
             {
                 //Topic 7.1
                 int score = 3;
-                string game_state = "playing";
+                bool done = false;
                 string input;
                 string[] heads_tails = {"heads", "tails"};
 
                 string chance;
-                while (game_state == "playing")
+                while (!done)
                 {
-                    Console.WriteLine("  THE CASINO!!                            Current Score:" + score);
+                    Console.WriteLine("THE CASINO!!                            Current Score:" + score);
                     Console.WriteLine("----------------------------------------------------------");
                     Console.Write("heads, tails, or quit: ");
                     input = Console.ReadLine().ToLower();
@@ -85,7 +79,8 @@ namespace Topic_7
                     }
                     else if (input == "quit")
                     {
-                        game_state = "quit";
+                        done = true;
+                        Console.WriteLine("thank you for playing.");
                     }
                     else if (input == chance)
                     {
@@ -98,12 +93,12 @@ namespace Topic_7
                         score--;
                         if (score <= 0)
                         {
-                            game_state = "lost";
+                            done = true;
                             Console.WriteLine();
                             Console.WriteLine("GAME OVER.");
+                            Console.WriteLine("thank you for playing.");
                         }
                     }
-                    Console.WriteLine("thank you for playing.");
 
                     Console.WriteLine();
                     Console.WriteLine("press enter to continue");
